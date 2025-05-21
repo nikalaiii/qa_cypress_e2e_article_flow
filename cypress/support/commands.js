@@ -49,6 +49,12 @@ Cypress.Commands.add('register', (email, username, password) => {
 
 Cypress.Commands.add('createArticle', (title, description, body) => {
   cy.getCookie('auth').then((token) => {
+    if (!token) {
+      throw new Error(
+        'Auth token not found.'
+      );
+    }
+
     const authToken = token.value;
 
     cy.request({
