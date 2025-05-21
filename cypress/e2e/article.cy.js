@@ -5,7 +5,7 @@ describe('page', () => {
     cy.visit('https://conduit.mate.academy/');
   });
 
-  it('should provide an ability to crate post after login', () => {
+  it('should provide the ability to create a post after login', () => {
     const userName = faker.person.lastName();
     const userMail = faker.internet.email();
     cy.register(userMail, userName, '321123');
@@ -26,7 +26,7 @@ describe('page', () => {
     cy.get('.article-meta > :nth-child(1) > .hide-text').should('exist');
   });
 
-  it('shoyld provide an ability to delete post after login', () => {
+  it('should provide the ability to delete a post after login', () => {
     const userName = faker.person.lastName();
     const userMail = faker.internet.email();
     cy.register(userMail, userName, '321123');
